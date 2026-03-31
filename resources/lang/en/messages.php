@@ -9762,4 +9762,6 @@ Smartly or Earn. ',
   '500_warning_message' => '500 warning message',
   'reload_page' => 'Reload page',
   'Help & Support Page' => 'Help & Support Page',
+  'Automated Message Guideline' => 'Automated Message Guideline',
+  'Create and manage predefined messages that customers can choose when reporting an issue. You can activate or deactivate each message as needed.' => 'Create and manage predefined messages that customers can choose when reporting an issue. You can activate or deactivate each message as needed.',
 );

@@ -522,7 +522,7 @@ class CustomerAuthController extends Controller
                         'updated_at' => now(),
                     ]);
 
-
+ 
 
                 $published_status = 0;
                 $payment_published_status = config('get_payment_publish_status');
@@ -786,7 +786,7 @@ class CustomerAuthController extends Controller
     }
 
     private function manual_login($request_data){
-
+        $errors = [];
         if($request_data['field_type'] == 'email'){
             $data = [
                 'email' => $request_data['email_or_phone'],
@@ -843,6 +843,7 @@ class CustomerAuthController extends Controller
         }
     }
     private function otp_login($request_data){
+        $errors = [];
         $data = DB::table('phone_verifications')->where([
             'phone' => $request_data['phone'],
             'token' => $request_data['otp'],
@@ -909,6 +910,7 @@ class CustomerAuthController extends Controller
 
     }
     private function social_login($data, $request_data){
+        $errors = [];
 
         $user = User::where('email', $data['email'])->first();
         $is_exist_user = null;

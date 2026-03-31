@@ -280,8 +280,8 @@ body{
 }
 
 .navbar-brand img {
-    height: 48px !important;
-    width: 100% !important;
+    height: 100px !important;
+    width: 150px !important;
     -o-object-fit: contain;
     object-fit: contain;
     -o-object-position: left center;
@@ -4976,7 +4976,7 @@ div.scroll-down {
 }
 
 .initial--36 {
-    max-height: 55px;
+    max-height: 100px;
     border-radius: 8px;
     max-width: 100% !important;
 }
