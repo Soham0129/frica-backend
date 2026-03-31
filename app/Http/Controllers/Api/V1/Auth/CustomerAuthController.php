@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 use Modules\Rental\Entities\RentalCart;
 use Modules\Rental\Entities\RentalCartUserData;
+use Illuminate\Support\Facades\Log;
 
 class CustomerAuthController extends Controller
 {
@@ -604,6 +605,7 @@ class CustomerAuthController extends Controller
 
     public function login(Request $request)
     {
+        Log::error('Test log working');
         $validator = Validator::make($request->all(), [
             'login_type' => 'required|in:manual,otp,social',
         ]);
