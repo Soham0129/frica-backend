@@ -8,7 +8,7 @@
     <section class="banner-section position-relative">
         <div class="container">
             <div class="banner-content wow fadeInUp">
-                <h1 class="title">{{ $landing_data['fixed_header_title'] }}</h1>
+                <h1 class="title">*{{ $landing_data['fixed_header_title'] }}*</h1>
                 <img class="w-100 onerror-image" data-onerror-image="{{ asset('assets/admin/img/160x160/img2.jpg') }}"
                     src="{{ \App\CentralLogics\Helpers::logoFullUrl()}}"
                     alt="">
