@@ -280,7 +280,7 @@ body{
 }
 
 .navbar-brand img {
-    height: 63px !important;
+    height: 100% !important;
     width: 100% !important;
     -o-object-fit: contain;
     object-fit: contain;
