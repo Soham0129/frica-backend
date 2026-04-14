@@ -799,4 +799,19 @@ class Store extends Model
     {
         return $this->morphMany(OrderTax::class, 'store');
     }
+    
+    public function vendorServices()
+    {
+        return $this->hasMany(\App\Models\VendorService::class, 'store_id');
+    }
+
+    public function bookings()
+    {
+        return $this->hasMany(\App\Models\Booking::class, 'store_id');
+    }
+
+    public function shortlistItems()
+    {
+        return $this->hasMany(\App\Models\EventShortlistItem::class, 'store_id');
+    }
 }

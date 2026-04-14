@@ -88,6 +88,11 @@ class Module extends Model
         return $this->morphMany(Translation::class, 'translationable');
     }
 
+    public function moduleType()
+    {
+        return $this->belongsTo(ModuleType::class, 'module_type', 'type');
+    }
+
     /**
      * @param $value
      * @return mixed
@@ -127,23 +132,23 @@ class Module extends Model
      * @param $query
      * @return mixed
      */
-    public function scopeParcel($query): mixed
-    {
-        return $query->where('module_type', 'parcel');
-    }
+    // public function scopeParcel($query): mixed
+    // {
+    //     return $query->where('module_type', 'parcel');
+    // }
 
     /**
      * @param $query
      * @return mixed
      */
-    public function scopeNotParcel($query): mixed
-    {
-        return $query->where('module_type', '!=' ,'parcel');
-    }
-    public function scopeNotRental($query): mixed
-    {
-        return $query->where('module_type', '!=' ,'rental');
-    }
+    // public function scopeNotParcel($query): mixed
+    // {
+    //     return $query->where('module_type', '!=' ,'parcel');
+    // }
+    // public function scopeNotRental($query): mixed
+    // {
+    //     return $query->where('module_type', '!=' ,'rental');
+    // }
 
     /**
      * @param $query

@@ -157,6 +157,7 @@
   'Dashboard' => 'Dashboard',
   'Hello, Here You Can Manage Your' => 'Hello  Here You Can Manage Your',
   'orders by Zone.' => 'Orders by Zone.',
+  'by Zone' => 'by Zone',
   'All_Zones' => 'All Zones',
   'This_Year' => 'This Year',
   'This_Month' => 'This Month',
@@ -9793,4 +9794,5 @@ Smartly or Earn. ',
   'event_products' => 'Event products',
   'Event Products' => 'Event Products',
   'Event Services' => 'Event Services',
+  'by Zone.' => 'By Zone.',
 );
