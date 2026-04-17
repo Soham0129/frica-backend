@@ -413,7 +413,7 @@ class ItemController extends Controller
 
     public function get_product(Request $request, $id)
     {
-        try {
+        try {         
             if ($request['campaign'] == 1) {
                 $item = ItemCampaign::active()
                 ->when(config('module.current_module_data'), function ($query) {
@@ -473,7 +473,14 @@ class ItemController extends Controller
                 'errors' => ['code' => 'product-001',
                 'message' => translate('messages.not_found'),
                 'file' => $e->getFile(),
-                'line' => $e->getLine()]
+                'line' => $e->getLine(),
+                'debug' => [
+                    'module.current_module_data' => config('module.current_module_data'),
+                    'module.current_module_id' => config('module.current_module_id'),
+                    'module.current_module_type' => config('module.current_module_type'),
+                    'item_id' => $id,
+                    'request_data' => request()->all()
+                ]]
             ], 404);
         }
     }
