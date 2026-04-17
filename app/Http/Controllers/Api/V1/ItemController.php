@@ -462,9 +462,18 @@ class ItemController extends Controller
             $item['store_details'] = $store;
             return response()->json($item, 200);
         } catch (\Exception $e) {
-            \Log::error($e);
+            \Log::error('API ERROR', [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()
+            ]);
+
             return response()->json([
-                'errors' => ['code' => 'product-001', 'message' => translate('messages.not_found')]
+                'errors' => ['code' => 'product-001',
+                'message' => translate('messages.not_found'),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()]
             ], 404);
         }
     }
