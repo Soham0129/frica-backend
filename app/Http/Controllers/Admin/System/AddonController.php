@@ -49,12 +49,12 @@ class AddonController extends Controller
 
     public function index(): Factory|View|Application
     {
-        $dir = 'Modules';
+        $dir = base_path('Modules');
         $directories = self::getDirectories($dir);
         $addons = [];
         foreach ($directories as $directory) {
             if($directory !== 'TaxModule'){
-                $sub_dirs = self::getDirectories('Modules/' . $directory);
+                $sub_dirs = self::getDirectories(base_path('Modules/' . $directory));
                 if (in_array('Addon', $sub_dirs)) {
                     $addons[] = 'Modules/' . $directory;
                 }
@@ -180,6 +180,9 @@ class AddonController extends Controller
     function getDirectories(string $path): array
     {
         $directories = [];
+        if (!is_dir($path)) {
+            return $directories;
+        }
         $items = scandir($path);
         foreach ($items as $item) {
             if ($item == '..' || $item == '.')
